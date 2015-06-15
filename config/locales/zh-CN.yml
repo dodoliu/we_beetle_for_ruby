@@ -1,0 +1,9 @@
+zh-CN:
+  hello: "你好啊"
+  time:
+    am: 上午
+    formats:
+      default: "%Y年%m月%d日 %H:%M:%S"
+      long: "%Y年%b%d日 %H:%M"
+      short: "%b%d日 %H:%M"
+    pm: 下午

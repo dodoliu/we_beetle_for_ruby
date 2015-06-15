@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # namespace :backend do
+  # get 'admins/index'
+  # end
+
+  devise_for :admins
+  root 'backend/main_classification#index'
+
+  namespace :backend do
+    root 'main_classification#index'
+    resources :main_classification
+    resources :admins
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

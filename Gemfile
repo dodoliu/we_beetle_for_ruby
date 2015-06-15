@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise', '3.4.1'
 gem 'mysql2', '0.3.18'
+gem 'kaminari', '0.16.3'
+#gem 'bootstrap-sass', '~> 3.3.4'
 
 
 
