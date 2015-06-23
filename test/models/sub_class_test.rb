@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Backend::MainClassificationControllerTest < ActionController::TestCase
+class SubClassTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

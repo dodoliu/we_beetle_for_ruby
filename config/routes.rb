@@ -1,14 +1,30 @@
 Rails.application.routes.draw do
   # namespace :backend do
+  # get 'main_classes/index'
+  # end
+
+  # namespace :backend do
+  # get 'main_classes/new'
+  # end
+
+  # namespace :backend do
+  # get 'main_classes/edit'
+  # end
+
+  # namespace :backend do
+  # get 'main_classes/show'
+  # end
+
+  # namespace :backend do
   # get 'admins/index'
   # end
 
   devise_for :admins
-  root 'backend/main_classification#index'
+  root 'backend/main_classes#index'
 
   namespace :backend do
-    root 'main_classification#index'
-    resources :main_classification
+    root 'main_classes#index'
+    resources :main_classes
     resources :admins
   end
   

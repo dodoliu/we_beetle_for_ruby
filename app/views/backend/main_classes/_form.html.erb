@@ -1,0 +1,63 @@
+<div class="row-fluid">
+	<!-- block -->
+	<div class="block">
+		<div class="navbar navbar-inner block-header">
+			<div class="muted pull-left">新增主分类</div>
+		</div>
+		<div class="block-content collapse in">
+			<div class="span12">
+					<%= form_for [:backend,@main_class], html: { class: 'form-horizontal' } do |f| %>
+					<fieldset>
+						<div class="control-group">
+							<label class="control-label" for="typeahead">主分类名称</label>
+							<div class="controls">
+								<%= f.text_field :name %>
+								<p class="help-block">Start typing to activate auto complete!</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="date01">Date input</label>
+							<div class="controls">
+								<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
+								<p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="optionsCheckbox">Checkbox</label>
+							<div class="controls">
+								<label class="uniform">
+									<input class="uniform_on" type="checkbox" id="optionsCheckbox" value="option1">
+									Option one is this and that&mdash;be sure to include why it's great
+								</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">展示位置</label>
+							<div class="controls">
+								<%=  f.select :position, main_class_conf["main_class_type"].collect { |p| [p[1],p[0]] }, include_blank: '--请选择--' %>
+							</div>
+						</div>
+						
+						<div class="control-group">
+							<label class="control-label" for="fileInput">File input</label>
+							<div class="controls">
+								<input class="input-file uniform_on" id="fileInput" type="file">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">备注</label>
+							<div class="controls">
+								<%= f.text_area :desc, class: 'input-xlarge textarea', placeholder: '描述', style: 'width: 810px; height: 200px' %>
+							</div>
+						</div>
+						<div class="form-actions">
+							<%= f.submit '提交', class: 'btn' %>
+							<%= button_to '返回', backend_main_classes_path, class: 'btn' %>
+						</div>
+					</fieldset>
+					<% end %>
+			</div>
+		</div>
+	</div>
+	<!-- /block -->
+</div>
