@@ -1,0 +1,18 @@
+development:
+  AccessKey: "RnV_hHKS9vwT4nl5h5YQ0PIuv6WGblvuC5Q_0_2O"
+  SecretKey: "s0rimFRUPRvaB3sumdyrIkqboQB2LeXeZEXh7ivh"
+  Bucket: "webeetle"
+  BucketDomain: "7xk9v6.com1.z0.glb.clouddn.com"
+  BucketPrivate: true
+test:
+  AccessKey: "RnV_hHKS9vwT4nl5h5YQ0PIuv6WGblvuC5Q_0_2O"
+  SecretKey: "s0rimFRUPRvaB3sumdyrIkqboQB2LeXeZEXh7ivh"
+  Bucket: "webeetle"
+  BucketDomain: "7xk9v6.com1.z0.glb.clouddn.com"
+  BucketPrivate: true
+production:
+  AccessKey: "RnV_hHKS9vwT4nl5h5YQ0PIuv6WGblvuC5Q_0_2O"
+  SecretKey: "s0rimFRUPRvaB3sumdyrIkqboQB2LeXeZEXh7ivh"
+  Bucket: "webeetle"
+  BucketDomain: "7xk9v6.com1.z0.glb.clouddn.com"
+  BucketPrivate: true

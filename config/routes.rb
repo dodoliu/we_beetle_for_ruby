@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   namespace :backend do
     root 'main_classes#index'
+    resources :admins
     resources :main_classes
     resources :sub_classes
-    resources :admins
+    resources :sub_class_details
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

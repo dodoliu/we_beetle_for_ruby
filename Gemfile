@@ -18,6 +18,9 @@ gem 'mysql2', '0.3.18'
 gem 'kaminari', '0.16.3'
 gem 'uuidtools', '2.1.5'
 gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '4.2.7'
+gem 'qiniu', '6.2.4'
+gem 'carrierwave-qiniu', '0.1.5'
 #gem 'bootstrap-sass', '~> 3.3.4'
 
 

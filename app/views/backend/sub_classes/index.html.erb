@@ -17,7 +17,7 @@
 						<tr>
 							<th>子分类名称</th>
 							<th>SID</th>
-							<th>展示位置</th>
+							<th>所属主分类</th>
 							<th>展示图片</th>
 							<th>操作</th>
 						</tr>
@@ -27,7 +27,7 @@
 						<tr>
 							<td><%= sc.name %></td>
 							<td><%= sc.sid %></td>
-							<td>abc123</td>
+							<td><%= sc.main_class_name %></td>
 							<td class="center"><%= image_tag(sc.pic_url, size: "40x35") %></td>
 							<td>
 								<%= link_to '编辑', edit_backend_sub_class_path(sc) %>
