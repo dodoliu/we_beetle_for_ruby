@@ -1,3 +1,12 @@
+<script type="text/javascript">
+	function main_calss_change(data)
+	{
+		location.href = "sub_classes?mc_id="+data;
+	}
+	$(document).ready(function(){
+		$("#main_class_main_class_id").val(get_url_param('mc_id'));
+	});
+</script>
 <div class="row-fluid">
 	<!-- block -->
 	<div class="block">
@@ -9,6 +18,9 @@
 				<div class="table-toolbar">
 					<div class="btn-group">
 						<a href="<%= new_backend_sub_class_path %>"><button class="btn btn-success">创建子分类<i class="icon-plus icon-white"></i></button></a>
+					</div>
+					<div style="float:right">  
+						主分类: <%= select("main_class", "main_class_id", @main_classes.collect { |m| [m.name,m.id] }, {include_blank: '--请选择--'}, {onchange: 'main_calss_change(this.options[this.options.selectedIndex].value)' } ) %>
 					</div>
 				</div>
 				

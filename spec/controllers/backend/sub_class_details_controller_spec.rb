@@ -1,6 +1,6 @@
 # require 'rails_helper'
 
-# RSpec.describe Backend::SubClassesController, type: :controller do
+# RSpec.describe Backend::SubClassDetailsController, type: :controller do
 
 #   describe "GET #index" do
 #     it "returns http success" do
@@ -16,16 +16,16 @@
 #     end
 #   end
 
-#   describe "GET #show" do
+#   describe "GET #create" do
 #     it "returns http success" do
-#       get :show
+#       get :create
 #       expect(response).to have_http_status(:success)
 #     end
 #   end
 
-#   describe "GET #create" do
+#   describe "GET #show" do
 #     it "returns http success" do
-#       get :create
+#       get :show
 #       expect(response).to have_http_status(:success)
 #     end
 #   end

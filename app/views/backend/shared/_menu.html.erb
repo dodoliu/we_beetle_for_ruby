@@ -27,7 +27,7 @@
         <li class="dropdown" id="li_sub_class">
           <%= link_to '子分类管理', backend_sub_classes_path, {role: 'button', class: 'dropdown-toggle'} %>
         </li>
-        <li class="dropdown" id="li_sub_class">
+        <li class="dropdown" id="li_sub_class_detail">
           <%= link_to '子分类明细管理', backend_sub_class_details_path, {role: 'button', class: 'dropdown-toggle'} %>
         </li>
         <li class="dropdown" id="li_subscribe">
@@ -41,3 +41,6 @@
   </div>
 </div>
 </div>
+<%= stylesheet_link_tag 'uniform.default', media: 'all', 'data-turbolinks-track' => true  %>
+<%= javascript_include_tag 'jquery.uniform.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'backend_layout.js', 'data-turbolinks-track' => true %>

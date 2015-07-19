@@ -42,7 +42,7 @@ module Backend
 		def edit
 		end
 		def update
-			if @main_class.update(not_create_params)
+			if @main_class.update(non_create_params)
 				redirect_to edit_backend_main_class_path(@main_class), notice: '修改成功'
 			else
 				render :new
@@ -68,7 +68,7 @@ module Backend
 			params.require(:main_class).permit(:name, :sid, :position, :pic_url, :desc)
 		end
 		#not create permit params
-		def not_create_params
+		def non_create_params
 			params.require(:main_class).permit(:name, :position, :pic_url, :desc)
 		end
 

@@ -12,13 +12,23 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-
+#登陆注册
 gem 'devise', '3.4.1'
+
 gem 'mysql2', '0.3.18'
+#分页
 gem 'kaminari', '0.16.3'
-gem 'uuidtools', '2.1.5'
+
+#创建uuid
+# gem 'uuidtools', '2.1.5'
+
+#上传图片
 gem 'carrierwave', '0.10.0'
+
+#图片处理
 gem 'mini_magick', '4.2.7'
+
+#七牛云存储
 gem 'qiniu', '6.2.4'
 gem 'carrierwave-qiniu', '0.1.5'
 #gem 'bootstrap-sass', '~> 3.3.4'
@@ -54,6 +64,10 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  #测试
   gem 'rspec-rails', '3.3.2'
+  #生成测试seed
+  gem 'factory_girl_rails', '4.5.0'
+
 end
 
