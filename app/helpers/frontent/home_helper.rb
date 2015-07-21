@@ -1,0 +1,2 @@
+module Frontent::HomeHelper
+end

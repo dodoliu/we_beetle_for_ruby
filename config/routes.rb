@@ -1,41 +1,16 @@
 Rails.application.routes.draw do
-  namespace :backend do
-  get 'sub_class_details/index'
-  end
+  devise_for :admins #指定权限验证使用的对象为admin
 
-  namespace :backend do
-  get 'sub_class_details/new'
-  end
+  root 'frontent/home#index'
 
-  namespace :backend do
-  get 'sub_class_details/create'
-  end
-
-  namespace :backend do
-  get 'sub_class_details/show'
-  end
-
-  namespace :backend do
-  get 'sub_class_details/edit'
-  end
-
-  namespace :backend do
-  get 'sub_class_details/update'
-  end
-
-  namespace :backend do
-  get 'sub_class_details/destroy'
-  end
-
-  devise_for :admins
-  root 'backend/main_classes#index'
-
+  get 'home/index', to: 'frontent/home#index'
+  
   namespace :backend do
     root 'main_classes#index'
     resources :admins
-    resources :main_classes
-    resources :sub_classes
-    resources :sub_class_details
+    resources :main_classes, :sub_classes, :sub_class_details
+    # resources :sub_classes
+    # resources :sub_class_details
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
