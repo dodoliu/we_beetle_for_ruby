@@ -16,14 +16,16 @@
     <%= javascript_include_tag 'jquery.dataTables.min', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'scripts', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'DT_bootstrap', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     
     <%= render 'backend/shared/menu' %>
-    
+        
     <% unless notice.nil? %>
-    <div><%= notice %></div>
+      <div id="div_notice" style="background-color: gray;margin-top:0px;padding-top: 0px;width:200px;margin-left:50%;text-align: center">
+        <div id='inner_notice'><%= notice %></div></div>
     <% end %>
 
     <div class="container-fluid">

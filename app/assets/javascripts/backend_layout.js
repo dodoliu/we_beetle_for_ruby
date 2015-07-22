@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	//菜单选择
 	var url = location.href;
 	if (url.indexOf('backend/admins') > -1) {
 		$("#li_admin").addClass('open');
@@ -14,4 +16,18 @@ $(document).ready(function() {
 		$("#li_main_class").addClass('open');
 	}
 
+	//notice提示	
+	$("#div_notice").animate({
+		height: '30px',
+		cpacity: '0.5'
+	},function() {
+		setTimeout(function(){
+			$("#div_notice").animate({
+				height: '0px',
+				cpacity: '0.5'
+			},function(){
+				$("#inner_notice").hide();
+			});
+		},3000);
+	});
 });

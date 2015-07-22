@@ -7,22 +7,26 @@
 		<div class="block-content collapse in">
 			<div class="span12">
 				<%= form_for [:backend,@main_class], html: { class: 'form-horizontal' } do |f| %>
-				<fieldset>
-					
-					<div class="control-group">
+				<fieldset>	
+					<div class="control-group" style="color:red">
 						<%= f.error_messages %>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="typeahead">主分类名称</label>
 						<div class="controls">
 							<%= f.text_field :name %>
-							<p class="help-block">Start typing to activate auto complete!</p>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label">展示位置</label>
 						<div class="controls">
 							<%=  f.select :position, main_class_conf["main_class_type"].collect { |p| [p[1],p[0]] }, include_blank: '--请选择--' %>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="typeahead">URL</label>
+						<div class="controls">
+							<%= f.text_field :url %>
 						</div>
 					</div>
 					<div class="control-group">

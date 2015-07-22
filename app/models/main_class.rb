@@ -1,3 +1,4 @@
+#encoding: utf-8
 class MainClass < ActiveRecord::Base
 	mount_uploader :pic_url, ImageUploader
 

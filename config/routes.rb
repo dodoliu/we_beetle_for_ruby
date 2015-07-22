@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'frontent/home#index'
 
   get 'home/index', to: 'frontent/home#index'
+  get 'secondview/index', to: 'frontent/secondview#index'
   
   namespace :backend do
     root 'main_classes#index'

@@ -1,60 +1,65 @@
-<body>
-    <div class="banner">
-        <div id="wrapper" style="overflow: hidden;" >
-            <div id="scroller" >
-                <ul id="thelist">
-                    <li><p>甲壳虫设计</p><a href="javascript:void(0)"><img src="~/Images/first.jpg"></a></li>
-                </ul>
+
+        <%= render 'frontent/shared/meta' %>
+
+        <%= stylesheet_link_tag 'frontent/cate', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'frontent/iscroll', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'frontent/index_other', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'frontent/index_other2', media: 'all', 'data-turbolinks-track' => true %>
+        
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="banner">
+            <div id="wrapper" style="overflow: hidden;" >
+                <div id="scroller" >
+                    <ul id="thelist">
+                        <li><a href="javascript:void(0)"><img src="img/first.jpg"></a></li>
+                    </ul>
+                </div>
             </div>
+            <div class="clr"></div>
         </div>
-        <div id="nav">
-            <div id="prev" onclick="myScroll.scrollToPage('prev', 0,400,2);return false">← prev</div>
-            <ul id="indicator">
-                <li class="active"></li>
-            </ul>
-            <div id="next" onclick="myScroll.scrollToPage('next', 0);return false">next →</div>
+        <div id="insert1">
         </div>
-        <div class="clr"></div>
-    </div>
-
-    <div id="insert1">
-    </div>
-    <ul class="mainmenu">
-
-		<% @result.each do |t| %>
-		<li>
-            <% link_to 'www.baidu.com' %>
-                <%= image_tag t.pic_url, alt: t.name %>
-                <p>
-                    <b>
+        <ul class="mainmenu">
+            <% @results.each do |t| %>
+            <li>
+                <% case t.name %>
+                <% when '家装案例','工装案例','实景案例' %>
+                <a href="secondview/index?sid=<%= t.sid %>">
+                <% else %>
+                <a href="<%= t.url %>">
+                <% end %>
+                    <%= image_tag t.pic_url, alt: t.name %>
+                    <p>
+                        <b>
                         <%= t.name %>
-                    </b>
-                    <span>
-                        <%= t.name %>
-                    </span>
-                </p>
-            </a>
-        </li>
-		<% end %>
-
-    </ul>
-    <script>
-    var count = document.getElementById("thelist").getElementsByTagName("img").length;
-
-    var count2 = document.getElementsByClassName("menuimg").length;
-    for (i = 0; i < count; i++) {
-        document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:" + document.body.clientWidth + "px";
-
-    }
-    document.getElementById("scroller").style.cssText = " width:" + document.body.clientWidth * count + "px";
-
-    window.onresize = function () {
+                        </b>
+                        <span>
+                            <%= t.name %>
+                        </span>
+                    </p>
+                </a>
+            </li>
+            <% end %>
+        </ul>
+        <div id="insert2"></div>
+        <div style="display:none"> </div>
+        <div class="copyright">
+            ©2014-2015 甲壳虫设计版权所有
+        </div>
+        <script>
+        var count = document.getElementById("thelist").getElementsByTagName("img").length;
         for (i = 0; i < count; i++) {
-            document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:" + document.body.clientWidth + "px";
-
+        document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:" + document.body.clientWidth + "px";
         }
         document.getElementById("scroller").style.cssText = " width:" + document.body.clientWidth * count + "px";
-    }
-    </script>
-
-</body>
+        window.onresize = function () {
+        for (i = 0; i < count; i++) {
+        document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:" + document.body.clientWidth + "px";
+        }
+        document.getElementById("scroller").style.cssText = " width:" + document.body.clientWidth * count + "px";
+        }
+        </script>
+    </body>
+</html>

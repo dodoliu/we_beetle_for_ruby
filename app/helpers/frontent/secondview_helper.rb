@@ -1,0 +1,2 @@
+module Frontent::SecondviewHelper
+end

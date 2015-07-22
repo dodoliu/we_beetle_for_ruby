@@ -1,6 +1,4 @@
-# require 'uuidtools'
-# require 'securerandom'
-
+#encoding: utf-8
 module Backend
 
 	class MainClassesController < Backend::ApplicationController
@@ -9,11 +7,6 @@ module Backend
 		
 		def index
 			@main_classes = MainClass.page(params[:page]).order('id desc')
-			# puts @main_classes[0].pic_url
-			
-			# @main_classes.each do |p|
-			# 	puts Marshal.dump p
-			# end
 		end
 
 		def new
@@ -21,19 +14,11 @@ module Backend
 		end
 		def create
 			@main_class = MainClass.new(create_params)
-			# puts "哈哈 #{SecureRandom.uuid}"
-			# @main_class.sid = UUIDTools::UUID.random_create
-			# SecureRandom.uuid
 			@main_class.sid = SecureRandom.uuid
-			@main_class.status = 1
-			
-			
-
+			@main_class.status = 1			
 
 			if @main_class.save
-				# redirect_to action: :index, notice: "创建成功"
 				redirect_to edit_backend_main_class_path(@main_class), notice: '新建成功'
-				# format.html { redirect_to edit_backend_main_class_path(@main_class), notice: '创建成功' }
 			else
 				render :new
 			end
