@@ -1,0 +1,81 @@
+<%= render 'frontent/shared/meta' %>
+<%= stylesheet_link_tag 'frontent/reset', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'frontent/stylist', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'frontent/stylist_other', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'frontent/swipe', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+<div class="mod_main ">
+	<div class="banner">
+		<div style="width:100%;align:center;margin:0 auto;" id="imageswzi">
+			<div id="displayone">
+				<img src="/img/team.jpg" id="onebannerimg" style="width:100%;">
+			</div>
+		</div>
+		<i><img src="/img/mask.png"></i>
+	</div>
+	<div class="mod_menu clr">
+		<% @results.each_with_index do |item,index| %>
+			<% if (index + 1) % 2 != 0 %>
+			<a href="<%= item.url %>" class="color">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="no-mt">
+					<tbody>
+						<tr>
+							<td width="40%" align="right"><a href="javascript:void(0)" ><%= item.name %></a><img src="/img/arrow.jpg" width="22" class="ml-5 mr-5"></td>
+							<td width="20%"><img src="/img/mid.jpg"></td>
+							<td width="40%">
+								<div class="pic mt ml-5">
+									<img src="<%= item.pic_url %>" class="contentimgcl" width="100%">
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</a>
+			<% elsif (index + 1) % 2 == 0 %>
+			<a href="<%= item.url %>" class="color">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" class="no-mt1">
+					<tbody>
+						<tr>
+							<td width="40%" align="right">
+								<div class="pic mb mr-5">
+									<img src="<%= item.pic_url %>" class="contentimgcl" width="100%">
+								</div>
+							</td>
+							<td width="20%" align="center"><img src="/img/mid.jpg"></td>
+							<td width="40%"><img src="/img/arr1.jpg" width="22" class="ml-5 mr-5"><a href="javascript:void(0)"><%= item.name %></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</a>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+<%= render 'frontent/shared/footer' %>
+<script>
+$(function () {
+var winheight = $(window).height();
+$('#wrap').css('min-height', winheight - 28 + 'px');
+var winwidth = $(window).width();
+$('.contentimgcl').css('height', winwidth * 0.333333 * 0.52 + 'px');
+$('#banner_box ol').css('display', 'none');
+$("#displayswipe").show();
+$("#displayone").hide();
+$("#displayswipe").hide();
+$("#displayone").show();
+
+new Swipe(document.getElementById('banner_box'), {
+speed: 500,
+auto: 3000,
+callback: function () {
+var lis = $(this.element).next("ol").children();
+lis.removeClass("on").eq(this.index).addClass("on");
+}
+});
+});
+</script>
+</body>
+</html>

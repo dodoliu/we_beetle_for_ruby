@@ -1,0 +1,62 @@
+/*手机端样式*/
+img{-webkit-user-select:​ none}
+.mod_main{background-color:#f2f3f8;width:100%;min-width:300px; max-width:640px;min-height:100%;margin:0 auto;position:relative;-webkit-box-sizing: border-box; -moz-box-sizing:border-box;}
+.banner {display: block; position: relative; z-index: 999; width: 100%;}
+.banner i{display: block;position: absolute; width: 100%; z-index: 1000; bottom: -1px;}
+.mod_menu {display:block; width:80%; padding:0 10%; margin-top: 5%; background: url(/images/modt/mod39/bg.jpg) center center repeat-y;}
+.mod_menu table {font-size: 1rem}
+.pic {padding: 3px; border: 1px solid #dedede; background: #fff;-webkit-border-radius: 2px; border-radius: 2px;-webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2); box-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+.pt-5 {padding-top: 5%;}
+.mt-5 {margin-top:5%;}
+.ml-5 {margin-left:10%;}
+.mb {margin-bottom: 40%;}
+.mt {margin-top: 40%;}
+.no-mt {margin-top: -15%;}
+.no-mt1 {margin-top: -8%;}
+.ml-3 {margin-left: 3%;}
+.ml-5 {margin-left: 5%;}
+.mr-3 {margin-right: 3%;}
+.mr-5 {margin-right: 5%;}
+.pt-3 {padding-top: 3%;}
+.fl {float:left;}
+.fr {float:right;}
+.color{color:#333;}
+footer {display:block; width:100%; line-height:2.8; background:#000; color:#fff; font-size:1em; text-align:center;}
+
+
+/*从右往左*/
+.animation1 .mod_menu{-webkit-animation: animation1 1s;}
+@-webkit-keyframes animation1
+{
+0%   {margin-left:200%;}
+100% {margin-left:0%;}
+}
+/*从左往右*/
+.animation2 .mod_menu{-webkit-animation: animation2 1s;}
+@-webkit-keyframes animation2
+{
+0%   {margin-left:-200%;}
+100% {margin-left:0%;}
+}
+/*渐显*/
+.animation3{ opacity:1;-webkit-animation: animation3_1 1s;}
+.animation3 .mod_menu{opacity:1;-webkit-animation: animation3_2 1.8s;}
+@-webkit-keyframes animation3_1
+{
+0%   {opacity:0;}
+100% {opacity:1;}
+}
+@-webkit-keyframes animation3_2
+{
+0%   {opacity:0;}
+50%   {opacity:0;}
+100% {opacity:1;}
+}
+
+/*翻转*/
+.animation4 .mod_menu{-webkit-animation: animation4 0.8s;}
+@-webkit-keyframes animation4
+{
+0%{-webkit-transform:rotateY(0deg);}
+100%{-webkit-transform:rotateY(360deg);}
+}

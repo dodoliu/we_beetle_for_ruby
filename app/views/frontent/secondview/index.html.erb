@@ -1,40 +1,36 @@
-
-        <%= render 'frontent/shared/meta' %>
-
-        <%= stylesheet_link_tag 'frontent/reset', media: 'all', 'data-turbolinks-track' => true %>
-        <%= stylesheet_link_tag 'frontent/m_info', media: 'all', 'data-turbolinks-track' => true %>
-        <%= stylesheet_link_tag 'frontent/secondview', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'frontent/swipe', 'data-turbolinks-track' => true %>
-    </head>
-    <body id="cate1">
-        <div id="insert1"></div>
-        <ul class="mainmenu">
-            
-
-            <a data-bind="attr:{href:'/Beetle/BeetlePicShow?sid='+$data.BCCSid()}">
-                <div class="info_con">
-                    <img data-bind="attr:{src:$data.BCCPic}" width="34%" class="info_l topbn">
-                    <script>
-                    $(function () {
-                    var winwidth = $(window).width();
-                    $('.topbn').css('height', winwidth * 0.28 * 140 / 180 + 'px');
-                    });
-                    </script>
-                    <div class="info_r">
-                        <h3 data-bind="text:$data.BCCName"></h3>
-                        <p style="word-break:break_all;"></p>
-                    </div>
-                    <div style="font-size:12px;line-height: 18px;color:#b3b3b3;float:left;margin-left:10px;width:50%" data-bind="text:$data.BCCDesc">
-                    </div>
-                </a>
-                <div class="clr"></div>
-            </ul>
-
-            <div id="insert2"></div>
-            <div style="display:none"> </div>
-            <div class="copyright" style="text-align:center;height:35px;margin-top:8px">
-                ©2014-2015 甲壳虫设计版权所有
+<%= render 'frontent/shared/meta' %>
+<%= stylesheet_link_tag 'frontent/reset', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'frontent/m_info', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'frontent/secondview', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'frontent/swipe', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body id="cate1">
+<div id="insert1"></div>
+<ul class="mainmenu">
+    <% @results.each do |t| %>
+    <a href="<%= t.url %>">
+        <div class="info_con">
+            <img src="<%= t.pic_url %>" width="34%" class="info_l topbn">
+            <script>
+            $(function () {
+            var winwidth = $(window).width();
+            $('.topbn').css('height', winwidth * 0.28 * 140 / 180 + 'px');
+            });
+            </script>
+            <div class="info_r">
+                <h3><%= t.name %></h3>
+                <p style="word-break:break_all;"></p>
             </div>
-        </body>
-    </html>
+            <div style="font-size:12px;line-height: 18px;color:#b3b3b3;float:left;margin-left:10px;width:50%" >
+                <%= t.desc %>
+            </div>
+        </a>
+        <% end %>
+        <div class="clr"></div>
+    </ul>
+    
+    <%= render 'frontent/shared/footer' %>
+</body>
+</html>

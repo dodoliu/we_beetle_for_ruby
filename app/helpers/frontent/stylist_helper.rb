@@ -1,0 +1,2 @@
+module Frontent::StylistHelper
+end
