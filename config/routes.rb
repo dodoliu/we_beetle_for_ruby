@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'beetle/index', to: 'frontent/beetle#index'
   get 'beetle/secondview', to: 'frontent/beetle#secondview'
   get 'beetle/stylist', to: 'frontent/beetle#stylist'
+  get 'beetle/classcontent', to: 'frontent/beetle#classcontent'
+  get 'beetle/secondshow', to: 'frontent/beetle#secondshow'
 
   namespace :backend do
     root 'main_classes#index'

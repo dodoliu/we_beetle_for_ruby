@@ -1,0 +1,27 @@
+<%= render 'frontent/shared/meta' %>
+<%= stylesheet_link_tag 'frontent/classlisthome', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body id="listhome10">
+<div class="Listpage">
+    <div id="todayList">
+        <ul class="todayList">
+            <% @results.each do |t| %>
+            <li>
+                <a href="<%= t.url %>">
+                    <b></b>
+                    <img src="<%= t.pic_url %>">
+                    <div>
+                        <h2><%= t.name %></h2>
+                        <p><%= t.desc %></p>
+                    </div>
+                </a>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
+<%= render 'frontent/shared/footer' %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<%= render 'frontent/shared/meta' %>
+<%= stylesheet_link_tag 'frontent/photo', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'frontent/photoswipe', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery.lazyload', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'klass.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'code.photoswipe-3.0.5.min', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body id="photo">
+<div class="qiandaobanner"> <a href="javascript:void(0)"><img src="/img/second.jpg" /></a> </div>
+<div id="main" role="main" style="height: 1207px;">
+    <ul id="Gallery" class="gallery">
+        <% if !@results.nil? %>
+        <% @results.each do |t| %>
+        <li>
+            <a href="<%= t.pic_url %>">
+                <img src="<%= t.pic_url %>"/>
+                <p><%= t.desc %></p>
+            </a>
+        </li>
+        <% end %>
+        <% end %>
+    </ul>
+</div>
+<%= render 'frontent/shared/footer' %>
+<%= javascript_include_tag 'jquery.imagesloaded', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'jquery.wookmark.min', 'data-turbolinks-track' => true %>
+<!--下面是瀑布流js-->
+<script type="text/javascript">
+(function ($) {
+$('#Gallery').imagesLoaded(function () {
+// Prepare layout options.
+var options = {
+autoResize: true, // This will auto-update the layout when the browser window is resized.
+container: $('#main'), // Optional, used for some extra CSS styling
+offset: 4, // Optional, the distance between grid items
+itemWidth: 150 // Optional, the width of a grid item
+};
+// Get a reference to your grid items.
+var handler = $('#Gallery li');
+// Call the layout function.
+handler.wookmark(options);
+});
+var options = {}, instance = window.Code.PhotoSwipe.attach(window.document.querySelectorAll('#Gallery a'), options);
+})(jQuery);
+</script>
+</body>
+</html>

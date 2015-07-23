@@ -10,7 +10,7 @@
 <div id="insert1"></div>
 <ul class="mainmenu">
     <% @results.each do |t| %>
-    <a href="<%= t.url %>">
+    <a href="secondshow?sid=<%= t.id %>">
         <div class="info_con">
             <img src="<%= t.pic_url %>" width="34%" class="info_l topbn">
             <script>
