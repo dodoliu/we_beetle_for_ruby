@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-
   devise_for :admins #指定权限验证使用的对象为admin
 
-  root 'frontent/home#index'
+  root 'frontent/beetle#index'
 
-  get 'home/index', to: 'frontent/home#index'
-  get 'secondview/index', to: 'frontent/secondview#index'
-  get 'stylist/index', to: 'frontent/stylist#index'
-  
+  get 'beetle/index', to: 'frontent/beetle#index'
+  get 'beetle/secondview', to: 'frontent/beetle#secondview'
+  get 'beetle/stylist', to: 'frontent/beetle#stylist'
+
   namespace :backend do
     root 'main_classes#index'
     resources :admins

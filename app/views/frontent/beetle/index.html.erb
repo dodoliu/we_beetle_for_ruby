@@ -24,9 +24,9 @@
     <li>
         <% case t.name %>
         <% when '家装案例','工装案例','实景案例' %>
-        <a href="secondview/index?sid=<%= t.id %>">
+        <a href="beetle/secondview?sid=<%= t.id %>">
             <% when '设计师团队' %>
-        <a href="stylist/index?sid=<%= t.id %>">
+        <a href="beetle/stylist?sid=<%= t.id %>">
             <% else %>
             <a href="<%= t.url %>">
                 <% end %>
