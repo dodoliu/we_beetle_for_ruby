@@ -22,5 +22,19 @@ module WeBeetle
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+
+    # config.generators do |g|
+    #     g.test_framework :rspec,
+    #         fixtures: true,  #为各模型生成测试固件(使用factory girl 创建的预构件,而不是默认的固件)
+    #         view_specs: false, #不生成"视图测试"
+    #         helper_specs: false, #生成控制器时不生成对应的帮助方法测试文件,如果你觉得有必要,可以把这个选项设为true,对帮助方法进行测试
+    #         routing_specs: false, #不针对config/routes.rb的测试文件
+    #         controller_specs: true,
+    #         request_specs: false
+    #     g.fixture_replacement :factory_girl, dir: "spec/factories" #告知rails使用预构件代替固件,把预构件存放在spec/factories文件夹中
+    # end
+
+
   end
 end

@@ -1,2 +1,4 @@
 --color
 --require spec_helper
+--format documentation  #使用文档格式可以清晰的看出哪些测试通过了，哪些失败了
+#--warnings #如果加入这个选项，RSpec 会输出应用及其所用 gem 抛出的所有提醒

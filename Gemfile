@@ -64,10 +64,22 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  #测试
+  #封装 RSpec 的程序，还包含了一些专为 Rails 提供的功能
   gem 'rspec-rails', '3.3.2'
-  #生成测试seed
+  #把 Rails 生成测试数据默认使用的固件换成更好用的预构件
   gem 'factory_girl_rails', '4.5.0'
 
 end
 
+group :test do 
+  #为预构件生成名字、Email 地址以及其他的示例数据；
+  gem "faker", '1.4.3'
+  #便于模拟用户和应用的交互操作；
+  gem "capybara", '2.4.4'
+  #清理“测试数据库”，确保 RSpec 中的测试用例运行于一块净土之上；
+  gem "database_cleaner", '1.4.1'
+  #这个 gem 的功能只有一个，但做的很好，如果需要，它会打开系统的默认浏览器，显示应用当前渲染的页面。调试测试时特别有用；
+  gem "launchy", '2.4.3'
+  #结合 Capybara 测试基于 JavaScript 的交互操作。
+  gem "selenium-webdriver", '2.46.2'
+end

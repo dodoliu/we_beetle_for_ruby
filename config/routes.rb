@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     root 'main_classes#index'
     resources :admins
     resources :main_classes, :sub_classes, :sub_class_details
-    # resources :sub_classes
-    # resources :sub_class_details
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
