@@ -1,12 +1,7 @@
 FactoryGirl.define do
   factory :sub_class_detail do
-    name "MyString"
-sid "MyString"
-sub_class_id 1
-status "MyString"
-url "MyString"
-desc "MyString"
-pic_url "MyString"
+    name "走廊"
+	pic_url File.open(File.join(Rails.root,'/spec/fixtures/files/company.jpg'))
   end
 
 end

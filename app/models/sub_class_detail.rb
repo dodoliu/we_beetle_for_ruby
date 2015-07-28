@@ -4,8 +4,6 @@ class SubClassDetail < ActiveRecord::Base
 
 	belongs_to :sub_class
 
-	validates :name, presence: true, length: { maximum: 50 }
+	validates :name, uniqueness: true, presence: true, length: { maximum: 50 }
 	validates :pic_url, presence: { message: '必须选择' }
-	# validates :url, presence: true, length: { maximum: 255 }
-
 end
