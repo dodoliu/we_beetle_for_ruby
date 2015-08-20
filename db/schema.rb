@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718150623) do
+ActiveRecord::Schema.define(version: 20150801121827) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -72,5 +72,19 @@ ActiveRecord::Schema.define(version: 20150718150623) do
   end
 
   add_index "sub_classes", ["sid"], name: "index_sub_classes_on_sid", unique: true, using: :btree
+
+  create_table "subscribes", force: :cascade do |t|
+    t.string   "contact",       limit: 255
+    t.string   "information",   limit: 255
+    t.date     "server_date"
+    t.string   "house_type",    limit: 255
+    t.string   "housea_ddress", limit: 255
+    t.string   "floor_area",    limit: 255
+    t.string   "style",         limit: 255
+    t.string   "memo",          limit: 255
+    t.string   "status",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
 end

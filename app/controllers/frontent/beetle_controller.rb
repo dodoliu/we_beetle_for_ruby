@@ -22,6 +22,21 @@ module Frontent
       @results = SubClassDetail.select('`pic_url`,`desc`,`name`,`url`').where("sub_class_id= '#{params[:sid]}'")
     end
 
+    #订阅
+    def subscribe      
+    end
+    def subscribe_create
+      @subscribe = Subscribe.new({ contact: params[:contact],information: params[:information], server_date: params[:server_date],
+      house_type: params[:house_type], housea_ddress: params[:housea_ddress], floor_area: params[:floor_area], style: params[:style],
+      memo: params[:memo] })
+      @subscribe.status = 1 
+      if @subscribe.save
+        #.....这个  ":json" 是关键,如果没有...返回的数据不是json格式
+        render :json => { :IsSuccess => true}
+      else
+        p 'aaaaaaa'
+      end
+    end
 
     private 
     def find_sub_classes(url_sid)

@@ -9,21 +9,25 @@ RSpec.describe Backend::MainClassesController, Type: :controller do
 #日个嘴嘴,,,需要学的太多了.....
 #头大
 
-	before do
-		# @admin = Admin.create email: 'test_admin@163.com' 
-		sign_in :admin, @admin
-	end
+	# before do
+	# 	# @admin = Admin.create email: 'test_admin@163.com' 
+	# 	sign_in :admin, @admin
+	# end
 
-	describe "GET #index" do
-		it "returns http 200" do
-			# get :index
-			# expect(respsone).to be_success
-			# expect(response).to have_http_status(200)
-			# 
+	# describe "GET #index" do
+	# 	it "returns http 200" do
+	# 		# get :index
+	# 		# expect(respsone).to be_success
+	# 		# expect(response).to have_http_status(200)
+	# 		# 
 			
 
-		end
-	end	
+	# 	end
+	# end	
+
+
+
+
 
 
 

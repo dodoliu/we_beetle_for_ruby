@@ -13,6 +13,7 @@ module Backend
 			@main_class = MainClass.new
 		end
 		def create
+			p create_params.to_s
 			@main_class = MainClass.new(create_params)
 			@main_class.sid = SecureRandom.uuid
 			@main_class.status = 1			

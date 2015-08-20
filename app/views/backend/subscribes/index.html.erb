@@ -1,0 +1,59 @@
+<div class="row-fluid">
+	<!-- block -->
+	<div class="block">
+		<div class="navbar navbar-inner block-header">
+			<div class="muted pull-left">订阅列表</div>
+		</div>
+		<div class="block-content collapse in">
+			<div class="span12">
+				<div class="table-toolbar">
+					<div class="btn-group">
+						<a href="<%= new_backend_main_class_path %>"><button class="btn btn-success">导出CSV<i class="icon-plus icon-white"></i></button></a>				
+					</div>
+				</div>
+				
+				<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+					<thead>
+						<tr>
+							<th>联系人</th>
+							<th>联系方式</th>
+							<th>预定日期</th>
+							<th>户型</th>
+							<th>小区地址</th>
+							<th>建筑面积</th>
+							<th>期望风格</th>
+							<th>指定设计师或备注</th>
+							<th>状态</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @subscribes.each do |t| %>
+						<tr>
+							<td><%= t.contact %></td>
+							<td><%= t.information %></td>
+							<td><%= t.server_date %></td>
+							<td><%= t.house_type %></td>
+							<td><%= t.housea_ddress %></td>
+							<td><%= t.floor_area %></td>
+							<td><%= t.style %></td>
+							<td><%= t.memo %></td>
+							<td><%= t.status %></td>
+							<td>
+								<%= link_to '修改状态','edit_status/'+t.id.to_s, data: { confirm: "确定修改吗?"} %>
+							</td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+	
+			<div style="float:right;margin-top: 0px">
+				<%= paginate @subscribes %>
+			</div>
+
+
+		</div>
+	</div>
+	<!-- /block -->
+</div>

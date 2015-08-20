@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins #指定权限验证使用的对象为admin
 
   root 'frontent/beetle#index'
@@ -8,11 +9,15 @@ Rails.application.routes.draw do
   get 'beetle/stylist', to: 'frontent/beetle#stylist'
   get 'beetle/classcontent', to: 'frontent/beetle#classcontent'
   get 'beetle/secondshow', to: 'frontent/beetle#secondshow'
+  get 'beetle/subscribe', to: 'frontent/beetle#subscribe'
+  get 'beetle/subscribe_create', to: 'frontent/beetle#subscribe_create'
 
   namespace :backend do
     root 'main_classes#index'
     resources :admins
     resources :main_classes, :sub_classes, :sub_class_details
+    get 'subscribes', to: 'subscribes#index'
+    get 'subscribes/edit_status/:id', to: 'subscribes#edit_status'
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
